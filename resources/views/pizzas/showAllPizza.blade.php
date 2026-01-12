@@ -6,7 +6,7 @@
 @foreach ($pizzas as $pizza)
     <tr>
         <td>{{$pizza->nombre}}</td>
-        <td>{{}}</td>
+        <td></td>
     </tr>
 @endforeach    
 </table>
