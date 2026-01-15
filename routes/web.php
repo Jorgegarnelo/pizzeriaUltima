@@ -3,31 +3,20 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PizzaController;
 
-Route::get('/', [PizzaController::class, 'showAllPizzas'])
-    ->name('pizzas.showAllPizzas');
+Route::get('/', [PizzaController::class, 'showAllPizzas'])->name('pizzas.showAllPizzas');
 
-Route::get('/pizza/{id}', [PizzaController::class, 'showOnePizza'])
-    ->name('pizzas.showOnePizza');
+Route::get('/pizza/{id}', [PizzaController::class, 'showOnePizza'])->name('pizzas.showOnePizza');
 
-Route::get('/crearpizza', [PizzaController::class, 'createPizza'])
-    ->name('pizzas.createPizza');
+Route::get('/crearpizza', [PizzaController::class, 'create'])->name('pizzas.createPizza');
 
-Route::post('/pizzas', [PizzaController::class, 'store'])
-    ->name('pizzas.store');    
+Route::post('/pizzas', [PizzaController::class, 'store'])->name('pizzas.store');    
 
-Route::get('/actualizapizza/{id}', [PizzaController::class, 'updatePizza'])
-    ->name('pizzas.updatePizza');    
+Route::get('/pizzas/{id}/edit', [PizzaController::class, 'edit'])->name('pizzas.edit');    
 
-Route::get('/pizzas/{id}/edit', [PizzaController::class, 'edit'])
-    ->name('pizzas.edit');    
+Route::put('/pizzas/{id}', [PizzaController::class, 'update'])->name('pizzas.update');
 
-Route::put('/pizzas/{id}', [PizzaController::class, 'update'])
-    ->name('pizzas.update');
+Route::get('/pizzas/confirm/{pizza}', [PizzaController::class, 'confirmDelete'])->name('pizzas.confirmDelete');    
 
-Route::get('/pizzas/confirm/{pizza}', [PizzaController::class, 'confirmDelete'])
-    ->name('pizzas.confirmDelete');    
-
-Route::delete('/pizzas/destroy/{pizza}', [PizzaController::class, 'destroy'])
-    ->name('pizzas.destroy');    
+Route::delete('/pizzas/destroy/{pizza}', [PizzaController::class, 'destroy'])->name('pizzas.destroy'); 
     
     

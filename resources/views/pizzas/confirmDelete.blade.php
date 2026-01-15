@@ -10,5 +10,5 @@
     @method('DELETE')
 
     <button type="submit"> Sí, eliminar</button>
-    <a href="{{ route('pizzas.showAllPizzas'}}">Cancelar</a>
+    <a href="{{ route('pizzas.showAllPizzas')}}">Cancelar</a>
 </form>

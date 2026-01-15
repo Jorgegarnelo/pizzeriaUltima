@@ -10,9 +10,9 @@
     </div>
 @endif 
 
-<form action="{{route('pizzas.update', $pizza->id)}}" method="Post">
+<form action="{{route('pizzas.update', $pizza->id)}}" method="POST">
     @csrf
-    ç@method('PUT')
+    @method('PUT')
 
     <input type="text" name="nombre"  value="{{$pizza->nombre}}">
 
@@ -20,11 +20,11 @@
 
     <input type="number" step="0.01" name="precio" value="{{ $pizza->precio }}">
 
-@foreach($ingredientes as $ingrediente)
-    <label>
+@foreach ($ingredientes as $ingrediente)
         <input type="checkbox" name="ingredientes[]" value="{{ $ingrediente->id }}" {{ $pizza->ingredientes->contains($ingrediente->id) ? 'checked' : '' }}>
-    </label><br>
+        <label>{{ $ingrediente->nombre }}</label><br>
     @endforeach
 
     <button type="submit">Editar</button>
     
+</form>

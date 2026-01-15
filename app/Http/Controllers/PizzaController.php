@@ -69,7 +69,7 @@ class PizzaController extends Controller
         if ($request->has('ingredientes')) {
             $pizza->ingredientes()->attach($request->ingredientes);
         }
-        return redirect()->route("pizzas.index");
+        return redirect()->route('pizzas.showAllPizzas')->with('success', 'Pizza creada correctamente');
     }
 
 
