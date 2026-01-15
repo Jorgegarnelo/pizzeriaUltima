@@ -26,11 +26,11 @@
 
     @foreach($ingredientes as $ingrediente)
     <label>
-        <input type="checkbox" name="ingredientes[]" value="{{ $ingrediente->id }}">
+        <input type="checkbox" name="ingredientes[]" value="{{ $ingrediente->id }}" {{ in_array($ingrediente->id, old('ingredientes', [])) ? 'checked' : '' }}>
     </label><br>
     @endforeach
 
-    <button type="submit"></button>
+    <button type="submit">Guardar</button>
 
 
 

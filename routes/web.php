@@ -17,3 +17,17 @@ Route::post('/pizzas', [PizzaController::class, 'store'])
 
 Route::get('/actualizapizza/{id}', [PizzaController::class, 'updatePizza'])
     ->name('pizzas.updatePizza');    
+
+Route::get('/pizzas/{id}/edit', [PizzaController::class, 'edit'])
+    ->name('pizzas.edit');    
+
+Route::put('/pizzas/{id}', [PizzaController::class, 'update'])
+    ->name('pizzas.update');
+
+Route::get('/pizzas/confirm/{pizza}', [PizzaController::class, 'confirmDelete'])
+    ->name('pizzas.confirmDelete');    
+
+Route::delete('/pizzas/destroy/{pizza}', [PizzaController::class, 'destroy'])
+    ->name('pizzas.destroy');    
+    
+    
